@@ -18,14 +18,15 @@ public class Demo : MonoBehaviour
 
         if (yuren == null) return;
 
-        CreateMonster(yuren, new ExternalBehaviorTree[] { btBirth });
+        MonsterMono mm = CreateMonster(yuren, new ExternalBehaviorTree[] { btBirth });
+        mm.Begin();
     }
 
     /// <summary>
     /// 创建一个怪物
     /// </summary>
     /// <param name="monster"></param>
-    void CreateMonster(GameObject monster, ExternalBehaviorTree[] ebts)
+    MonsterMono CreateMonster(GameObject monster, ExternalBehaviorTree[] ebts)
     {
         for (int i = 0; i < ebts.Length; ++i)
         {
@@ -34,6 +35,8 @@ public class Demo : MonoBehaviour
 
             behaviorTreeGroup.Add(bt.Group, bt);
         }
+
+        return monster.GetComponent<MonsterMono>();
     }
 
     /// <summary>
