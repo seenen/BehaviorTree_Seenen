@@ -3,6 +3,7 @@ using UnityEditor;
 using System.Collections.Generic;
 using System.IO;
 using BehaviorDesigner.Editor;
+using BehaviorDesigner.Runtime;
 
 namespace BDRuntimeExtend
 {
@@ -42,6 +43,9 @@ namespace BDRuntimeExtend
             foreach (GameObject go in Selection.gameObjects)
             {
                 Debug.Log(go.name);
+
+                BehaviorTree bt = go.GetComponent<BehaviorTree>();
+
             }
         }
     }
