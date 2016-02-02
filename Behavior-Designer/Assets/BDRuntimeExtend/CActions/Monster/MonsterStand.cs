@@ -16,7 +16,7 @@ public class MonsterStand : Action
         state.wrapMode = WrapMode.Loop;
     }
 
-    public override void OnStart()
+    public override void OnStart() 
     {
         base.OnStart();
 

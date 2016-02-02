@@ -13,7 +13,8 @@ public class MonsterBirth : Action
 
     public override void OnAwake()
     {
-        birthPos = (SharedVector3)GlobalVariables.Instance.GetVariable("MonsterBirth_Pos");
+        //birthPos = (SharedVector3)GlobalVariables.Instance.GetVariable("MonsterBirth_Pos");
+        birthPos = (SharedVector3)Owner.GetVariable("MonsterBirth_Pos");
 
         gameObject.transform.position = birthPos.Value;
 

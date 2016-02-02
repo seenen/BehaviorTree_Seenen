@@ -4,6 +4,8 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
 [TaskCategory("Monster")]
+[TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}MoveTowardsIcon.png")]
+[TaskDescription("移动.")]
 public class MonsterMovement : Action
 {
     public SharedFloat speed;
@@ -29,7 +31,7 @@ public class MonsterMovement : Action
 
     public override void OnStart()
     {
-        targetPosition = (SharedVector3)GlobalVariables.Instance.GetVariable("MonsterMovement_Target");
+        targetPosition = (SharedVector3)Owner.GetVariable("MonsterMovement_Target");
 
         if ((targetTransform == null || targetTransform.Value == null) && targetPosition == null)
         {

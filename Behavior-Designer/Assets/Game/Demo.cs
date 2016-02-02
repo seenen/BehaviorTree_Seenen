@@ -3,6 +3,7 @@ using System.Collections;
 using BehaviorDesigner.Runtime;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using BehaviorDesigner.Runtime.Tasks;
 
 public class Demo : MonoBehaviour
 {
@@ -10,59 +11,83 @@ public class Demo : MonoBehaviour
 
     public Dictionary<int, BehaviorTree> behaviorTreeGroup = new Dictionary<int, BehaviorTree>();
 
+    public MonsterList mMonsterList = null;
+
+    public WayPoints mWayPoints = null;
+
+    public BehaviorTree btBirth = null;
+
     // Use this for initialization
     void Start ()
     {
-        //ExternalBehaviorTree btBirth = (ExternalBehaviorTree)Resources.Load("BTAsset/Birth", typeof(ExternalBehaviorTree));
-        ExternalBehaviorTree btBirth = (ExternalBehaviorTree)GameObject.Instantiate(Resources.Load("BTAsset/btBirthBehavior", typeof(ExternalBehaviorTree)));
 
-        if (yuren == null) return;
+        StartInnal();
 
-        MonsterMono mm = CreateMonster(yuren, new ExternalBehaviorTree[] { btBirth });
-        mm.Begin();
+        //StartExternal();
     }
 
-    /// <summary>
-    /// 创建一个怪物
-    /// </summary>
-    /// <param name="monster"></param>
-    MonsterMono CreateMonster(GameObject monster, ExternalBehaviorTree[] ebts)
+    void StartInnal()
     {
-        for (int i = 0; i < ebts.Length; ++i)
-        {
-            ExternalBehaviorTree ebt = (ExternalBehaviorTree)ebts[i];
-            BehaviorTree bt = AddBT(yuren, ebt);
+        BehaviorTree[] bts = yuren.GetComponents<BehaviorTree>();
 
-            behaviorTreeGroup.Add(bt.Group, bt);
+        for (int i = 0; i < bts.Length; ++i)
+        {
+            if (bts[i].BehaviorName == "MonsterNormal")
+                btBirth = bts[i];
         }
 
-        return monster.GetComponent<MonsterMono>();
+        Task EntryTask = null;
+        Task rootTask = null;
+        List<Task> detachedTasks = null;
+
+        BehaviorSource bsSource = btBirth.GetBehaviorSource();
+
+        bsSource.Load(out EntryTask, out rootTask, out detachedTasks);
+
+        for (int i = 0; i < 4; ++i)
+        {
+            GameObject obj = (GameObject)GameObject.Instantiate(mMonsterList.GetMonsterByIndex(i));
+            obj.AddComponent<NavMeshAgent>();
+
+            BehaviorTree behaviorTree = obj.AddComponent<BehaviorTree>();
+
+            BehaviorSource bs = new BehaviorSource();
+            bs.behaviorName             = i.ToString();
+            bs.behaviorDescription      = bsSource.behaviorDescription;
+            bs.Owner                    = behaviorTree;
+            bs.TaskData                 = bsSource.TaskData;
+
+            bs.CheckForSerialization(true);
+
+            behaviorTree.SetBehaviorSource(bs);
+
+
+            MonsterMono mm  = obj.AddComponent<MonsterMono>();
+            mm.mPathList    = mWayPoints;
+            mm.Begin();
+        }
+
+
     }
 
-    /// <summary>
-    /// 给对象绑定行为树
-    /// </summary>
-    /// <param name="obj"></param>
-    /// <param name="ebt"></param>
-    BehaviorTree AddBT(GameObject obj, ExternalBehaviorTree ebt)
+    void StartExternal()
     {
-        BehaviorTree behaviorTree = obj.AddComponent<BehaviorTree>();
-        behaviorTree.ExternalBehavior = ebt;
-        //behaviorTree.SetBehaviorSource(ebt.GetBehaviorSource());
-        //behaviorTree.GetBehaviorSource().behaviorName = ebt.GetBehaviorSource().behaviorName;
-        //behaviorTree.GetBehaviorSource().behaviorDescription = ebt.GetBehaviorSource().behaviorDescription;
-        //behaviorTree.GetBehaviorSource().RootTask = ebt.GetBehaviorSource().RootTask;
+        for (int i = 0; i < 4; ++i)
+        {
+            GameObject obj = (GameObject)GameObject.Instantiate(mMonsterList.GetMonsterByIndex(i));
+            obj.AddComponent<NavMeshAgent>();
 
-        behaviorTree.StartWhenEnabled = false;
+            BehaviorTree behaviorTree = obj.AddComponent<BehaviorTree>();
 
-        return behaviorTree;
+            ExternalBehaviorTree beExtHaviorTree = (ExternalBehaviorTree)GameObject.Instantiate(Resources.Load("Monster/MonsterNormal", typeof(ExternalBehaviorTree)));
+            //ExternalBehaviorTree beExtHaviorTree = (ExternalBehaviorTree)(Resources.Load(assetResourcePath, typeof(ExternalBehaviorTree)));
+            behaviorTree.ExternalBehavior = beExtHaviorTree;
+
+            MonsterMono mm = obj.AddComponent<MonsterMono>();
+            mm.mPathList = mWayPoints;
+            mm.Begin();
+        }
     }
-
-    // Update is called once per frame
-    void Update ()
-    {
-	
-	}
 
     private enum BehaviorSelectionType
     {
@@ -111,9 +136,6 @@ public class Demo : MonoBehaviour
     private void DisableAll()
     {
         StopCoroutine("EnableBehavior");
-
-        behaviorTreeGroup[(int)prevSelectionType].DisableBehavior();
-
     }
 
     private IEnumerator EnableBehavior()
@@ -121,8 +143,6 @@ public class Demo : MonoBehaviour
         Debug.Log("selectionType = " + selectionType);
 
         yield return new WaitForSeconds(0.5f);
-
-        behaviorTreeGroup[(int)selectionType].EnableBehavior();
 
     }
 }

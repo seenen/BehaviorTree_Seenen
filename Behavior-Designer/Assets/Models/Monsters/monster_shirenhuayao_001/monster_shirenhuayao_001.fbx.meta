@@ -1,0 +1,134 @@
+fileFormatVersion: 2
+guid: 2b615c23ad0f9404f9984f240811706c
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip001
+    100002: Bip001 Head
+    100004: Bip001 L Calf
+    100006: Bip001 L Foot
+    100008: Bip001 L Forearm
+    100010: Bip001 L Hand
+    100012: Bip001 R Calf
+    100014: Bip001 R Foot
+    100016: Bip001 R Forearm
+    100018: Bip001 R Hand
+    100020: Bip001 Spine
+    100022: Bip001 Spine1
+    100024: Bone007
+    100026: Bone009
+    100028: Bone021(mirrored)
+    100030: Bone021(mirrored)(mirrored)
+    100032: Bone023(mirrored)
+    100034: Bone023(mirrored)(mirrored)
+    100036: Bone025
+    100038: Bone026
+    100040: Bone027
+    100042: Bone027(mirrored)
+    100044: Bone028
+    100046: Bone028(mirrored)
+    100048: Bone029
+    100050: Bone029(mirrored)
+    100052: Bone030
+    100054: Bone030(mirrored)
+    100056: Bone033
+    100058: Bone034
+    100060: Bone034(mirrored)
+    100062: Bone035
+    100064: Bone036
+    100066: //RootNode
+    100068: monster_shirenhuayao_001
+    400000: Bip001
+    400002: Bip001 Head
+    400004: Bip001 L Calf
+    400006: Bip001 L Foot
+    400008: Bip001 L Forearm
+    400010: Bip001 L Hand
+    400012: Bip001 R Calf
+    400014: Bip001 R Foot
+    400016: Bip001 R Forearm
+    400018: Bip001 R Hand
+    400020: Bip001 Spine
+    400022: Bip001 Spine1
+    400024: Bone007
+    400026: Bone009
+    400028: Bone021(mirrored)
+    400030: Bone021(mirrored)(mirrored)
+    400032: Bone023(mirrored)
+    400034: Bone023(mirrored)(mirrored)
+    400036: Bone025
+    400038: Bone026
+    400040: Bone027
+    400042: Bone027(mirrored)
+    400044: Bone028
+    400046: Bone028(mirrored)
+    400048: Bone029
+    400050: Bone029(mirrored)
+    400052: Bone030
+    400054: Bone030(mirrored)
+    400056: Bone033
+    400058: Bone034
+    400060: Bone034(mirrored)
+    400062: Bone035
+    400064: Bone036
+    400066: //RootNode
+    400068: monster_shirenhuayao_001
+    4300000: monster_shirenhuayao_001
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: monster_shirenhuayao_001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 1
+  userData: 
