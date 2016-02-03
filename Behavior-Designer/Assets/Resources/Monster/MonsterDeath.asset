@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23f08d2ae4cba14087c1ed36193d82b, type: 3}
+  m_Name: MonsterDeath
+  m_EditorClassIdentifier: 
+  mBehaviorSource:
+    behaviorName: MonsterDeath
+    behaviorDescription: 
+    mTaskData:
+      types:
+      - BehaviorDesigner.Runtime.Tasks.EntryTask
+      - BehaviorDesigner.Runtime.Tasks.Sequence
+      - MonsterDeath
+      - BehaviorDesigner.Runtime.Tasks.Basic.UnityGameObject.Destroy
+      parentIndex: ffffffff000000000100000001000000
+      startIndex: 06000000100000001b00000026000000
+      variableStartIndex: 00000000
+      JSONSerialization: 
+      fieldSerializationData:
+        typeName:
+        - StringType
+        - StringName
+        - BooleanIsShared
+        - BooleanIsGlobal
+        - BooleanNetworkSync
+        - Vector3mValue
+        - Int32ID
+        - StringFriendlyName
+        - BooleanIsInstant
+        - Vector2NodeDataOffset
+        - StringNodeDataComment
+        - BooleanNodeDataIsBreakpoint
+        - BooleanNodeDataDisabled
+        - BooleanNodeDataCollapsed
+        - Int32NodeDataColorIndex
+        - List`1NodeDataWatchedFields
+        - Int32ID
+        - StringFriendlyName
+        - BooleanIsInstant
+        - Vector2NodeDataOffset
+        - StringNodeDataComment
+        - BooleanNodeDataIsBreakpoint
+        - BooleanNodeDataDisabled
+        - BooleanNodeDataCollapsed
+        - Int32NodeDataColorIndex
+        - List`1NodeDataWatchedFields
+        - AbortTypeabortType
+        - Int32ID
+        - StringFriendlyName
+        - BooleanIsInstant
+        - Vector2NodeDataOffset
+        - StringNodeDataComment
+        - BooleanNodeDataIsBreakpoint
+        - BooleanNodeDataDisabled
+        - BooleanNodeDataCollapsed
+        - Int32NodeDataColorIndex
+        - List`1NodeDataWatchedFields
+        - Singleclipduring
+        - Int32ID
+        - StringFriendlyName
+        - BooleanIsInstant
+        - Vector2NodeDataOffset
+        - StringNodeDataComment
+        - BooleanNodeDataIsBreakpoint
+        - BooleanNodeDataDisabled
+        - BooleanNodeDataCollapsed
+        - Int32NodeDataColorIndex
+        - List`1NodeDataWatchedFields
+        - SharedGameObjecttargetGameObject
+        - StringSharedGameObjecttargetGameObjectType
+        - StringSharedGameObjecttargetGameObjectName
+        - BooleanSharedGameObjecttargetGameObjectIsShared
+        - BooleanSharedGameObjecttargetGameObjectIsGlobal
+        - BooleanSharedGameObjecttargetGameObjectNetworkSync
+        - Singletime
+        startIndex: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f00000030000000300000003100000032000000330000003400000035000000
+        dataPosition: 00000000260000003600000037000000380000003900000045000000490000004e0000004f000000570000005700000058000000590000005a0000005e00000062000000660000006e0000006f000000770000007700000078000000790000007a0000007e00000082000000860000008a0000009700000098000000a0000000a0000000a1000000a2000000a3000000a7000000ab000000af000000b3000000ba000000bb000000c3000000c3000000c4000000c5000000c6000000ca000000ce000000f7000000f7000000f8000000f9000000fa000000
+        unityObjects: []
+        byteData: 4265686176696f7244657369676e65722e52756e74696d652e536861726564566563746f72334d6f6e7374657242697274685f506f73010000856b8c420000000000000d4300000000456e74727901000000000000000000000000000000000000000000000153657175656e63650100000000cdc71443000000000000000000000000000000000000024d6f6e73746572204465617468018cd62cc3f6184e430000000000000000000000000000000000000344657374726f7901307e5343fa184e4300000000000000000000004265686176696f7244657369676e65722e52756e74696d652e53686172656447616d654f626a65637400000000000000
+        byteDataArray: 
